@@ -138,6 +138,7 @@ def main():
 
         for user_name, tasks in user_work_time.items():
             slack_msg_blocks.append(SlackBlockMsg(user_name, tasks).__dict__)
+            slack_msg_blocks.append({"type": "divider"})
 
         slack_send_msg(SLACK_CHANNEL_NAME, slack_msg_blocks)
     else:
